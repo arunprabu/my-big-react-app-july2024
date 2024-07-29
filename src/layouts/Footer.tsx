@@ -1,4 +1,4 @@
-// Fn Component with Anonymouns function
+// Fn Component with Anonymouns function a.k.a Fn Expression
 
 import MenuList from "./MenuList";
 

@@ -30,7 +30,7 @@ Single Page App (SPA)
     4. Header and Footer should NOT be loaded again and again  [DONE]
     5. The section in b/w Header and Footer should show contextual updates [DONE]
     6. Active Menu should be set [TODO]
-    7. Page Title should be updated 
+    7. Page Title should be updated [TODO]
 
     using react-router-dom 
 
@@ -56,4 +56,60 @@ Routing in React
   Step 4: Stop the Page Refresh in MenuList 
     replace a href with Link to 
     
+
+======
+Core Concepts of React JS 
+----
+  1. Props 
+      * objects 
+      
+  2. States 
+  3. Events 
+  4. Lists & Keys 
+  5. Conditional Rendering 
+
+
+
+
+Project Structure
+====
+  src/
+    layouts/
+      Header
+      Footer
+      MenuList
+    components/
+      shared/
+        ....
+        ....
+      netflix 
+        LatestShowList
+        FeaturedShowList
+        RecommendedShowList
+      user-manager/
+        AddUser
+        UserDetails 
+    pages/
+      HomePage 
+      NetflixPage 
+      UserManagerPage 
+      AboutPage 
+
+  
+
+
+Sharing data between components / Cross component Communication
+----
+  1. Parent to Child component Communication [DONE]
+      using props 
+
+  2. Child to Parent component Communication
+      using props with events and callback fn [TODO]
+
+  3. Any to Any component Communication
+      3.1 using context api of React JS (or) 
+      3.2 using redux-toolkit (or) 
+      3.3 using zustand (or some other alternatives of zustand/  redux-toolkit) [not part of our course]
+
+
 
