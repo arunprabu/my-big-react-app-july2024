@@ -60,12 +60,12 @@ Routing in React
 ======
 Core Concepts of React JS 
 ----
-  1. Props 
+  1. Props [DONE]
       * objects 
       
-  2. States 
-  3. Events 
-  4. Lists & Keys 
+  2. States [DONE]
+  3. Events [DONE]
+  4. Lists & Keys [DONE]
   5. Conditional Rendering 
 
 
@@ -84,7 +84,9 @@ Project Structure
         ....
       netflix 
         LatestShowList
+        LatestShow 
         FeaturedShowList
+        FeaturedShow
         RecommendedShowList
       user-manager/
         AddUser
@@ -112,4 +114,14 @@ Sharing data between components / Cross component Communication
       3.3 using zustand (or some other alternatives of zustand/  redux-toolkit) [not part of our course]
 
 
+
+Performance Tuning in ReactJS App
+====
+  1. get the exact from backend rest api 
+  2. keep required amount of data only in component 
+  3. never send unnecessary data to child comp 
+  4. never receive all props in child comp. instead destructuring props required 
+  5. use stable id as key in lists. not index 
+  6. never have unnecessary tags. keep the tags minimal
+  
 
