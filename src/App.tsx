@@ -7,6 +7,7 @@ import NetflixPage from "./pages/NetflixPage";
 import UserManagerPage from "./pages/UserManagerPage";
 import ProductsPage from "./pages/ProductsPage";
 import TodosPage from "./pages/TodosPage";
+import AddUser from "./components/user-manager/AddUser";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/netflix" element={<NetflixPage />} />
           <Route path="/user-manager" element={<UserManagerPage />} />
+          <Route path="/user-manager/add" element={<AddUser />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/todos" element={<TodosPage />} />
         </Routes>

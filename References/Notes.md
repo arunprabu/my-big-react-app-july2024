@@ -66,7 +66,7 @@ Core Concepts of React JS
   2. States [DONE]
   3. Events [DONE]
   4. Lists & Keys [DONE]
-  5. Conditional Rendering 
+  5. Conditional Rendering [DONE]
 
 
 
@@ -123,5 +123,5 @@ Performance Tuning in ReactJS App
   4. never receive all props in child comp. instead destructuring props required 
   5. use stable id as key in lists. not index 
   6. never have unnecessary tags. keep the tags minimal
-  
+
 
