@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import IUser from "../models/IUser";
 
 const UserManagerPage = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [users, setUsers] = useState([]);
-  const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [users, setUsers] = useState<IUser[]>([]);
+  const [isError, setIsError] = useState<boolean>(false);
 
   // Hit the REST API on load of the page
   // 1. What's the API URL? https://jsonplaceholder.typicode.com/users
@@ -69,7 +70,7 @@ const UserManagerPage = () => {
                     email: {user?.email}
                   </h6>
 
-                  <Link to="/user-manager/1123423" className="card-link">
+                  <Link to={`/user-manager/${user?.id}`} className="card-link">
                     View Details
                   </Link>
                 </div>

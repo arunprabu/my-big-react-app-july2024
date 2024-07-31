@@ -125,3 +125,44 @@ Performance Tuning in ReactJS App
   6. never have unnecessary tags. keep the tags minimal
 
 
+User Manager (CRUD APP)
+----
+  1. Add User (Create)
+      localhost:5173/user-manager/add
+
+  2. List Users  (Read)
+      localhost:5173/user-manager/
+
+  3. User Details (Read)
+      localhost:5173/user-manager/34
+
+  4. Update User (Update - TODO)
+      localhost:5173/user-manager/34  or localhost:5173/user-manager/34/edit
+
+  5. Delete User (Delete - TODO)
+      localhost:5173/user-manager/34  (Show confirmation Modal)
+
+
+
+amazon.in/
+amazon.in/electronics/                       -- ProductList
+amazon.in/electronics/laptops/               -- ProductList
+amazon.in/electronics/laptops/hp/            -- ProductList
+amazon.in/electronics/laptops/hp/324567890   -- ProductDetails 
+
+
+amazon.in/books/                        -- ProductList
+amazon.in/books/novels/                 -- ProductList
+amazon.in/books/novels/xyz/             -- ProductList
+amazon.in/books/novels/xyz/3245678      -- ProductDetails 
+
+
+URL Params 
+amazon.in/:category/:subcategory/:make/:id      -- ProductDetails 
+
+Query Params
+amazon.in?ref=home
+amazon.in/:category?sortBy=price-low-to-high&page=1&count=10
+
+=============
+

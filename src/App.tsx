@@ -8,6 +8,7 @@ import UserManagerPage from "./pages/UserManagerPage";
 import ProductsPage from "./pages/ProductsPage";
 import TodosPage from "./pages/TodosPage";
 import AddUser from "./components/user-manager/AddUser";
+import UserDetails from "./components/user-manager/UserDetails";
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
           <Route path="/netflix" element={<NetflixPage />} />
           <Route path="/user-manager" element={<UserManagerPage />} />
           <Route path="/user-manager/add" element={<AddUser />} />
+          {/* This url is dynamic and having id as url param */}
+          <Route path="/user-manager/:id" element={<UserDetails />} />
+
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/todos" element={<TodosPage />} />
         </Routes>
