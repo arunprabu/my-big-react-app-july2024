@@ -6,10 +6,15 @@
       must return JSX 
   3. export 
 */
+import { useContext } from "react";
 import MenuList from "./MenuList";
+import { CartContext } from "../contexts/CartContext";
 
 function Header() {
-  // must return JSX
+  // Subscribe to the CartContext
+  const { cartItems } = useContext(CartContext);
+  console.log(cartItems);
+  
   return (
     <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div className="container-fluid">
@@ -29,6 +34,7 @@ function Header() {
         </button>
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <MenuList />
+          <button className="btn btn-danger">Cart({cartItems?.length})</button>
         </div>
       </div>
     </nav>

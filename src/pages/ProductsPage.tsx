@@ -1,39 +1,80 @@
+import axios from "axios";
+import { useContext, useEffect, useState } from "react";
+import { IProduct } from "../models/IProduct";
+import { CartContext } from "../contexts/CartContext";
+
 const ProductsPage = () => {
+  const { cartItems, addToCart } = useContext(CartContext);
+
+  const [isLoading, setIsLoading] = useState(true);
+  const [products, setProducts] = useState<IProduct[]>([]);
+
+  const getProducts = async () => {
+    // Hit the REST API on load of the page
+    try {
+      const response = await axios.get("https://fakestoreapi.com/products");
+      console.log(response); // successful response
+      setProducts(response.data);
+      setIsLoading(false);
+    } catch (err) {
+      console.log(err); // error
+      // TODO: handle the error
+    }
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  const handleAddToCart = (product: IProduct) => {
+    console.log(product);
+    const updatedCartItems = [...cartItems, product];
+    addToCart(updatedCartItems);
+  };
 
   return (
     <>
       <h1>Shop Our Products</h1>
       <div className="row">
-
-        <div className="col-md-4">
-          <div className="card">
-            <img
-              src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-              className="card-img-top"
-              width={100}
-              height={200}
-            />
-            <div className="card-body">
-              <h5 className="card-title">iPhone </h5>
-              <p className="card-text">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              </p>
-              <p>USD. 500</p>
-            </div>
-            <div className="card-footer">
-              <button type="button" className="btn btn-primary btn-sm">
-                Add to Cart
-              </button>
-              <button
-                type="button"
-                className="ms-2 btn btn-outline-danger btn-sm"
-              >
-                Favorite
-              </button>
-            </div>
+        {isLoading && (
+          <div className="spinner-border" role="status">
+            <span className="visually-hidden">Loading...</span>
           </div>
-        </div>
-        
+        )}
+
+        {products.map((product) => {
+          return (
+            <div className="col-md-4" key={product.id}>
+              <div className="card">
+                <img
+                  src={product.image}
+                  className="card-img-top"
+                  width={100}
+                  height={200}
+                />
+                <div className="card-body">
+                  <h5 className="card-title">{product.title} </h5>
+                  <p>USD. {product.price}</p>
+                </div>
+                <div className="card-footer">
+                  <button
+                    type="button"
+                    className="btn btn-primary btn-sm"
+                    onClick={() => handleAddToCart(product)}
+                  >
+                    Add to Cart
+                  </button>
+                  <button
+                    type="button"
+                    className="ms-2 btn btn-outline-danger btn-sm"
+                  >
+                    Favorite
+                  </button>
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </>
   );
