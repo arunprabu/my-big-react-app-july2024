@@ -166,3 +166,17 @@ amazon.in/:category?sortBy=price-low-to-high&page=1&count=10
 
 =============
 
+Controlled Components
+====
+  * an input whose value is controlled by react 
+  * onChange is needed in inputs when you value prop in them
+
+
+Uncontrolled Components
+====
+  * where form data is handled by the DOM itself.
+  * you can use a ref to get form values from the DOM.
+
+  
+
+  
