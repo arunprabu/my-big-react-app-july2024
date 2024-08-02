@@ -117,12 +117,21 @@ Sharing data between components / Cross component Communication
 
 Performance Tuning in ReactJS App
 ====
-  1. get the exact from backend rest api 
+  1. get the exact data from backend rest api 
   2. keep required amount of data only in component 
   3. never send unnecessary data to child comp 
   4. never receive all props in child comp. instead destructuring props required 
   5. use stable id as key in lists. not index 
   6. never have unnecessary tags. keep the tags minimal
+  7. implement paginations
+  8. Implement Lazy loading of images 
+  9. Lazy loading Components
+  10. Also implement suspense 
+  11. implement error boundary
+  12. implement react virtualized if you are rendering grid, table and the like
+  13. use browser inspector's profiler and monitor
+  14. there are more tips. so learn more
+
 
 
 User Manager (CRUD APP)
@@ -177,6 +186,7 @@ Uncontrolled Components
   * where form data is handled by the DOM itself.
   * you can use a ref to get form values from the DOM.
 
-  
+======
 
-  
+
+

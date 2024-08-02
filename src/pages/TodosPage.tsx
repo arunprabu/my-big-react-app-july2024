@@ -10,7 +10,9 @@ const TodosPage = () => {
   // todoDispatch is the one using which you can call the reducer
 
   const handleAddTodo = () => {
+    // reading the data from input element
     console.log(todoInput.current?.value);
+    // You can connect to rest api and save the todo
     const newTodo: ITodo = {
       id: Math.floor(Math.random() * 10000000),
       title: todoInput.current!.value,
@@ -19,7 +21,7 @@ const TodosPage = () => {
 
     todoDispatch({
       type: "ADD_TODO",
-      payload: newTodo,
+      payload: newTodo, // saved todo from backend rest api can be sent here
     });
   };
 

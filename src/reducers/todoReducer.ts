@@ -19,10 +19,10 @@ export interface ITodo {
 
 type Action = {
   type: "ADD_TODO";
-  payload: ITodo;
+  payload?: ITodo;
 } | {
   type: "DELETE_TODO";
-  payload: ITodo;
+  payload?: ITodo;
 }
 
 export function todoReducer(state: ITodo[] = [], action: Action) {
