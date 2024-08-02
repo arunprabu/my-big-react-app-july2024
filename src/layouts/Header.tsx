@@ -8,12 +8,12 @@
 */
 import { useContext } from "react";
 import MenuList from "./MenuList";
-import { CartContext } from "../contexts/CartContext";
+import { CartContext, CartContextProps } from "../contexts/CartContext";
 
 function Header() {
   // Subscribe to the CartContext
-  const { cartItems } = useContext(CartContext);
-  console.log(cartItems);
+  const context = useContext<CartContextProps | undefined>(CartContext);
+  console.log(context!.cartItems);
   
   return (
     <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -34,7 +34,9 @@ function Header() {
         </button>
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <MenuList />
-          <button className="btn btn-danger">Cart({cartItems?.length})</button>
+          <button className="btn btn-danger">
+            Cart({context!.cartItems?.length})
+          </button>
         </div>
       </div>
     </nav>

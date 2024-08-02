@@ -1,4 +1,4 @@
-const Random = (props) => {
+const Random = (props: any) => {
   console.log(props);
   props.x();
   

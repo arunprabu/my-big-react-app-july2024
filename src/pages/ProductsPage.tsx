@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { IProduct } from "../models/IProduct";
-import { CartContext } from "../contexts/CartContext";
+import { CartContext, CartContextProps } from "../contexts/CartContext";
 
 const ProductsPage = () => {
-  const { cartItems, addToCart } = useContext(CartContext);
+  const context = useContext<CartContextProps | undefined>(CartContext);
 
   const [isLoading, setIsLoading] = useState(true);
   const [products, setProducts] = useState<IProduct[]>([]);
@@ -28,8 +28,8 @@ const ProductsPage = () => {
 
   const handleAddToCart = (product: IProduct) => {
     console.log(product);
-    const updatedCartItems = [...cartItems, product];
-    addToCart(updatedCartItems);
+    const updatedCartItems = [...context!.cartItems, product];
+    context!.addToCart(updatedCartItems);
   };
 
   return (

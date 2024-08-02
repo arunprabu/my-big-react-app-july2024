@@ -7,7 +7,7 @@
 import { createContext, useState } from "react";
 import { IProduct } from "../models/IProduct";
 
-interface CartContextProps {
+export interface CartContextProps {
   cartItems: IProduct[]; // Needed for Header, ProductsPage
   addToCart: (cartItems: IProduct[]) => void; // Needed for ProductsPage
 }

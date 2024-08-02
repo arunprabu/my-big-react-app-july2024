@@ -190,3 +190,6 @@ Uncontrolled Components
 
 
 
+Build & Deployment
+======
+  npm run build 

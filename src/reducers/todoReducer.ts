@@ -17,24 +17,19 @@ export interface ITodo {
   status: boolean;
 }
 
-type Action = {
-  type: "ADD_TODO";
-  payload?: ITodo;
-} | {
-  type: "DELETE_TODO";
-  payload?: ITodo;
-}
+type Action =
+  | { type: "ADD_TODO"; payload: ITodo }
+  | { type: "DELETE_TODO"; payload: number };
 
-export function todoReducer(state: ITodo[] = [], action: Action) {
-  // here you have manage the state based on the type of action dispatched
+export function todoReducer(state: ITodo[] = [], action: Action): ITodo[] {
   console.log("INSIDE todoReducer");
   console.log(action);
   switch (action.type) {
     case "ADD_TODO": {
-      return [
-        ...state, // spread operator in JS
-        action.payload,
-      ];
+      return [...state, action.payload];
+    }
+    case "DELETE_TODO": {
+      return state.filter((todo) => todo.id !== action.payload);
     }
     default:
       return state;

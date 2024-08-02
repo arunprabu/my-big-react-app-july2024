@@ -1,5 +1,5 @@
 import { useState } from "react";
-import RecommendedShow from "./RecommendedShow";
+// import RecommendedShow from "./RecommendedShow";
 
 const RecommendedShowList = () => {
   const [shows, setShows] = useState([
